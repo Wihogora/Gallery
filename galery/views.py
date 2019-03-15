@@ -1,7 +1,12 @@
 import datetime as dt
 from django.http  import HttpResponse,Http404
+from django.shortcuts import render
 
 #..........
+
+def welcome(request):
+    return render(request, 'welcome.html')
+
 def galery_of_day(request):
     date = dt.date.today()
      # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
