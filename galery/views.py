@@ -1,6 +1,6 @@
 import datetime as dt
 from django.http  import HttpResponse,Http404
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 #..........
 
@@ -9,16 +9,7 @@ def welcome(request):
 
 def galery_of_day(request):
     date = dt.date.today()
-     # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
-    day = convert_dates(date)
-    html = f'''
-        <html>
-            <body>
-                <h1>News for {day} {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    return render(request, 'all_galery/today_galery.html', {"date": date,})
 
 def convert_dates(dates):
 
@@ -39,3 +30,9 @@ def past_days_galery(request,past_date):
         except ValueError:
         # Raise 404 error when ValueError is thrown
             raise Http404()
+            assert False
+
+        if date == dt.date.today():
+            return redirect(galery_of_day)
+
+        return render(request, 'all_galery/today_galery.html', {"date": date})
