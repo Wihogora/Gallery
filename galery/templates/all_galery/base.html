@@ -8,6 +8,11 @@
   {% else %}
     <title> Moringa Tribune </title>
   {% endif %}
+  
+  {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basegalery.css' %}">
+  {% endblock %}
 
 </head>
 <body>
