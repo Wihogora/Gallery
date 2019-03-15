@@ -1,8 +1,7 @@
 from django.conf.urls import url
 from . import views
 
-#.........
 urlpatterns=[
-    #......
-    url('^today/$',views.galery_of_day,name='galeryToday')
+#.........
+    url(r'^archives/(\d{4}-\d{2}-\d{2})/$',views.past_days_galery,name = 'pastGalery')
 ]
