@@ -50,3 +50,9 @@ You need the following to work on the project:
 * virtualenv
 
 * A text Editor
+
+## Technologies Used
+* Django
+* HTML
+* CSS
+* Bootstrap
