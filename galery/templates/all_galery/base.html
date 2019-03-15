@@ -8,7 +8,7 @@
   {% else %}
     <title> Moringa Tribune </title>
   {% endif %}
-  
+
   {% block styles %}
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/basegalery.css' %}">
@@ -16,13 +16,25 @@
 
 </head>
 <body>
-    {% include "navbar.html" %}
+   {% include 'navbar.html' %}
+    <div class="container search-section">
+        <div class="row">
+            <div class="col-md-12 search-form">
+                <form class="form-inline" role="search" action="{% url 'search_images' %}">
+                    <input class="form-control search-input" name="category" type="search" placeholder="Search categories" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
 
-    {% block content %} <h1 class='text-center'>News for {{date|date:"l d-F Y"}}</h1> {%endblock%}
+    {% block content %}
+    {% endblock %}
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      {% bootstrap_javascript %}
+     
     {% endblock %}
 </body>
 </html>
