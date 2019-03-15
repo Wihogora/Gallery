@@ -3,7 +3,6 @@ from django.http  import Http404
 from django.shortcuts import render,redirect
 from .models import Image,Category,Location
 
-#..........
 
 def index(request):
     images = Image.objects.all()
