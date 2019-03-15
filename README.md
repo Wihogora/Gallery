@@ -30,3 +30,10 @@ Output Example: Redirected to the home page
 Input Example: Enter shoes in the navigation search
 
 Output Example: Redirected to the page with photos on shoes category
+
+## Setup/Installation Requirements
+To run this program
+
+* run this command lines in your terminal:
+* python manage.py runserver
+* access the application on this localhost address http://127.0.0.1:8000
