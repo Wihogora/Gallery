@@ -1,9 +1,9 @@
 # import datetime as dt
-from django.http  import Http404
 from django.shortcuts import render,redirect
 from .models import Image,Category,Location
+from django.http  import Http404
 
-
+# Create your views here.
 def index(request):
     images = Image.objects.all()
     locations = Location.objects.all()
@@ -22,8 +22,10 @@ def search_category(request):
     locations = Location.objects.all()
     if 'category' in request.GET and request.GET['category']:
         search_term = (request.GET.get('category')).title()
+        category= Category.objects.filter(name=search_term).all()
         searched_images = Image.search_by_category(search_term)
         message = f'{search_term}'
+        print(category)
         return render(request,'search.html',{'message':message,'images':searched_images,'locations':locations})
 
     else:
